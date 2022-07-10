@@ -5,6 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 const withTM = require('next-transpile-modules')(['@pancakeswap/uikit'])
 
+const isProd = process.env.NODE_ENV === 'production'
 const sentryWebpackPluginOptions =
   process.env.VERCEL_ENV === 'production'
     ? {
@@ -29,17 +30,8 @@ const sentryWebpackPluginOptions =
       }
 
 /** @type {import('next').NextConfig} */
-const config = {
-  compiler: {
-    styledComponents: true,
-  },
-  experimental: {
-    scrollRestoration: true,
-  },
-  reactStrictMode: true,
-  images: {
-    domains: ['static-nft.pancakeswap.com'],
-  },
+
+const someConfigInvalid = {
   async rewrites() {
     return [
       {
@@ -130,6 +122,24 @@ const config = {
         permanent: true,
       },
     ]
+  },
+}
+const config = {
+  assetPrefix: isProd ? '' : '',
+  trailingSlash: true,
+  compiler: {
+    styledComponents: true,
+  },
+  experimental: {
+    scrollRestoration: true,
+    images: {
+      unoptimized: true,
+    },
+  },
+  reactStrictMode: true,
+  images: {
+    loader: 'custom',
+    path: 'https://example.com/myaccount/',
   },
 }
 
