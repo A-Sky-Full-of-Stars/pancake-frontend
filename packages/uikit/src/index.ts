@@ -1,3 +1,5 @@
+console.info("%c==== Local packages: Uikit ====", "color: blue");
+
 // Components
 export * from "./components/Alert";
 export * from "./components/BalanceInput";

@@ -3,7 +3,7 @@ const { withSentryConfig } = require('@sentry/nextjs')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-const withTM = require('next-transpile-modules')(['@pancakeswap/uikit'])
+const withTM = require('next-transpile-modules')(['@pancakeswap/uikit', '@pancakeswap/sdk'])
 
 const isProd = process.env.NODE_ENV === 'production'
 const sentryWebpackPluginOptions =
@@ -137,10 +137,6 @@ const config = {
     },
   },
   reactStrictMode: true,
-  images: {
-    loader: 'custom',
-    path: 'https://example.com/myaccount/',
-  },
 }
 
 module.exports = withBundleAnalyzer(withSentryConfig(withTM(config), sentryWebpackPluginOptions))
