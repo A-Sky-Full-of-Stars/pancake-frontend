@@ -1,3 +1,4 @@
+import React, { Fragment } from 'react'
 import { ResetCSS } from '@pancakeswap/uikit'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
@@ -11,7 +12,6 @@ import useSentryUser from 'hooks/useSentryUser'
 import useUserAgent from 'hooks/useUserAgent'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { Fragment } from 'react'
 import { PersistGate } from 'redux-persist/integration/react'
 import { useStore, persistor } from 'state'
 import { usePollBlockNumber } from 'state/block/hooks'
@@ -54,17 +54,16 @@ function MyApp(props: AppProps) {
         />
         <meta
           name="description"
-          content="Cheaper and faster than Uniswap? Discover PancakeSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi and a lottery for CAKE."
+          content="Cheaper and faster than Uniswap? Discover DAOSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi and a lottery for CAKE."
         />
         <meta name="theme-color" content="#1FC7D4" />
-        <meta name="twitter:image" content="https://pancakeswap.finance/images/hero.png" />
         <meta
           name="twitter:description"
-          content="The most popular AMM on BSC! Earn CAKE through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by PancakeSwap), NFTs, and more, on a platform you can trust."
+          content="The most popular AMM on BSC! Earn CAKE through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by DAOSwap), NFTs, and more, on a platform you can trust."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="🥞 PancakeSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
-        <title>PancakeSwap</title>
+        <meta name="twitter:title" content="🥞 DAOSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
+        <title>DAOSwap</title>
       </Head>
       <Providers store={store}>
         <Blocklist>

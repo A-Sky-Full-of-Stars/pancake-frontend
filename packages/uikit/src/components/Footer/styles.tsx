@@ -30,6 +30,7 @@ export const StyledListItem = styled.li`
 
 export const StyledIconMobileContainer = styled(Box)`
   margin-bottom: 24px;
+  color: white;
 `;
 
 export const StyledToolsContainer = styled(Flex)`

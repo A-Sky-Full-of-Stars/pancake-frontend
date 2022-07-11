@@ -1,5 +1,6 @@
-console.info('%c==== Local packages: SDK ====', 'color: blue')
 import JSBI from 'jsbi'
+
+console.info('%c==== Local packages: SDK ====', 'color: blue')
 
 export { JSBI }
 
