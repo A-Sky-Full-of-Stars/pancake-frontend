@@ -68,6 +68,7 @@ export function currencyEquals(currencyA: Currency, currencyB: Currency): boolea
   return currencyA === currencyB
 }
 
+// WEIYA: This is the configuration for the BNB.
 export const WETH = {
   [ChainId.MAINNET]: new Token(
     ChainId.MAINNET,

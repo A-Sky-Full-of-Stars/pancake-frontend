@@ -35,6 +35,7 @@ export class Pair {
 
     const key = composeKey(token0, token1)
 
+    // WEIYA: 加密hash
     if (PAIR_ADDRESS_CACHE?.[key] === undefined) {
       PAIR_ADDRESS_CACHE = {
         ...PAIR_ADDRESS_CACHE,
@@ -53,6 +54,9 @@ export class Pair {
     const tokenAmounts = tokenAmountA.token.sortsBefore(tokenAmountB.token) // does safety checks
       ? [tokenAmountA, tokenAmountB]
       : [tokenAmountB, tokenAmountA]
+
+    // WEIYA: 加密hash
+
     this.liquidityToken = new Token(
       tokenAmounts[0].token.chainId,
       Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token),
