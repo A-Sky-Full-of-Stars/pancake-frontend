@@ -54,16 +54,16 @@ function MyApp(props: AppProps) {
         />
         <meta
           name="description"
-          content="Cheaper and faster than Uniswap? Discover DAOSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms in DeFi and a lottery for CAKE."
+          content="Cheaper and faster than Uniswap? Discover DAOSwap, the leading DEX on BNB Smart Chain (BSC) with the best farms"
         />
         <meta name="theme-color" content="#1FC7D4" />
         <meta
           name="twitter:description"
-          content="The most popular AMM on BSC! Earn CAKE through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by DAOSwap), NFTs, and more, on a platform you can trust."
+          content="The most popular AMM on BSC by user count! then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings and more, on a platform you can trust."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="🥞 DAOSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
-        <title>DAOSwap</title>
+        <meta name="twitter:title" content="🥞 DAO Swap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
+        <title>DAO Swap</title>
       </Head>
       <Providers store={store}>
         <Blocklist>
@@ -77,19 +77,6 @@ function MyApp(props: AppProps) {
           </PersistGate>
         </Blocklist>
       </Providers>
-      <Script
-        strategy="afterInteractive"
-        id="google-tag"
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer', '${process.env.NEXT_PUBLIC_GTAG}');
-          `,
-        }}
-      />
     </>
   )
 }

@@ -119,9 +119,6 @@ const Menu: React.FC<NavProps> = ({
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
 
-  const subLinksWithoutMobile = subLinks?.filter((subLink) => !subLink.isMobileOnly);
-  const subLinksMobileOnly = subLinks?.filter((subLink) => subLink.isMobileOnly);
-
   return (
     <MenuContext.Provider value={{ linkComponent }}>
       <Wrapper>
@@ -146,21 +143,8 @@ const Menu: React.FC<NavProps> = ({
             </Flex>
           </StyledNav>
         </FixedContainer>
-        {subLinks && (
-          <Flex justifyContent="space-around">
-            <SubMenuItems items={subLinksWithoutMobile} mt={`${totalTopMenuHeight + 1}px`} activeItem={activeSubItem} />
 
-            {subLinksMobileOnly?.length > 0 && (
-              <SubMenuItems
-                items={subLinksMobileOnly}
-                mt={`${totalTopMenuHeight + 1}px`}
-                activeItem={activeSubItem}
-                isMobileOnly
-              />
-            )}
-          </Flex>
-        )}
-        <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
+        <BodyWrapper mt={`${totalTopMenuHeight + 1}px`}>
           <Inner isPushed={false} showMenu={showMenu}>
             {children}
             <Footer
@@ -170,8 +154,6 @@ const Menu: React.FC<NavProps> = ({
               langs={langs}
               setLang={setLang}
               currentLang={currentLang}
-              cakePriceUsd={cakePriceUsd}
-              buyCakeLabel={buyCakeLabel}
               mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
             />
           </Inner>

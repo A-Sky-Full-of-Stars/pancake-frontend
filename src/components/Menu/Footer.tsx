@@ -42,7 +42,6 @@ const Footer: React.FC<{ variant?: FooterVariant; helpUrl?: string }> = ({
   variant = 'default',
   helpUrl = EXCHANGE_DOCS_URLS,
 }) => {
-  const { t } = useTranslation()
   const isSide = variant === 'side'
   return <Wrapper $isSide={isSide}>{isSide && <Flex flexGrow={1} />}</Wrapper>
 }
