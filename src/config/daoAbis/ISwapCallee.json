@@ -1,0 +1,24 @@
+[
+  {
+    "inputs": [
+      {
+        "components": [
+          { "internalType": "address", "name": "user", "type": "address" },
+          { "internalType": "address", "name": "pair", "type": "address" },
+          { "internalType": "address", "name": "inviter", "type": "address" },
+          { "internalType": "address", "name": "input", "type": "address" },
+          { "internalType": "address", "name": "output", "type": "address" },
+          { "internalType": "uint256", "name": "amountIn", "type": "uint256" },
+          { "internalType": "uint256", "name": "amountOut", "type": "uint256" }
+        ],
+        "internalType": "struct ISwapCallee.Params",
+        "name": "p",
+        "type": "tuple"
+      }
+    ],
+    "name": "swapCall",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
